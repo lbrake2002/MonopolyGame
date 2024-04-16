@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<!-- TODO: Delete this file - it is just a placeholder from when Inteli J created the project-->
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cosa.purple.MonopolyController">
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+   <HBox prefHeight="800.0" prefWidth="1500.0">
+      <children>
+         <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="500.0" spacing="15.0">
+            <children>
+               <Label id="lblPlayerTurn" fx:id="lblCurrentPlayer" alignment="CENTER" prefHeight="27.0" text="Player 1's Turn">
+                  <font>
+                     <Font name="System Bold" size="18.0" />
+                  </font>
+               </Label>
+               <Label fx:id="lblPosition" text="Your position on the board is: 0" />
+               <Label fx:id="lblPassedGo" />
+               <Label fx:id="lblJail" />
+               <Label fx:id="lblDoubles" />
+               <VBox prefHeight="200.0" prefWidth="100.0" spacing="15.0">
+                  <children>
+                     <HBox alignment="CENTER" prefHeight="75.0" prefWidth="160.0" spacing="10.0">
+                        <children>
+                           <ImageView fx:id="ivDice1" fitHeight="75.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@images/die_2.png" />
+                              </image>
+                           </ImageView>
+                           <ImageView fx:id="ivDice2" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@images/die_4.png" />
+                              </image>
+                           </ImageView>
+                        </children>
+                     </HBox>
+                     <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                        <children>
+                           <Button fx:id="btnRollDice" mnemonicParsing="false" onAction="#onRollDiceButtonClick" text="Roll Dice" />
+                           <Button fx:id="btnEndTurn" mnemonicParsing="false" onAction="#onEndTurnButtonClick" text="End Turn" />
+                           <Label id="lblPlrMonoMoney" fx:id="lblMonoMoney" text="\$1500">
+                              <graphic>
+                                 <Label text="Monopoly Money">
+                                    <font>
+                                       <Font name="System Bold" size="14.0" />
+                                    </font>
+                                 </Label>
+                              </graphic>
+                              <font>
+                                 <Font size="14.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </VBox>
+                  </children>
+               </VBox>
+               <Label fx:id="lblPropertyPlayer" text="Player 1's Properties">
+                  <font>
+                     <Font name="System Bold" size="18.0" />
+                  </font>
+               </Label>
+               <GridPane fx:id="propertyGrid" alignment="TOP_CENTER" gridLinesVisible="true" prefHeight="400.0" prefWidth="400.0">
+                  <columnConstraints>
+                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
+                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
+                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
+                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                     <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                     <RowConstraints maxHeight="100.0" minHeight="0.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                     <RowConstraints maxHeight="100.0" minHeight="0.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                     <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                  </rowConstraints>
+               </GridPane>
+            </children>
+         </VBox>
+         <Pane fx:id="boardPane" prefHeight="800.0" prefWidth="800.0">
+            <children>
+               <ImageView fitHeight="800.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@./images/Monopoly_Board.png" />
+                  </image>
+               </ImageView>
+            </children>
+         </Pane>
+      </children>
+   </HBox>
+</VBox>
